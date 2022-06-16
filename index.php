@@ -1,3 +1,11 @@
+<?php
+  session_start();
+
+  if (!isset($_SESSION['login'])) {
+    header('Location: ./login/index.php');
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,7 +58,7 @@
             <ul>
               <li><a class="" href="#contact">Kontak</a></li>
               <li><a class="" href="#team">Tim Teknis</a></li>
-              <li><a class="" a href="./login/index.html">Keluar</a></li>
+              <li><a class="" a href="./login/logout.php">Keluar</a></li>
             </ul>
           </li>
         </ul>

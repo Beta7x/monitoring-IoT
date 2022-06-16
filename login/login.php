@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require 'connection.php';
 
@@ -13,7 +14,9 @@ if (isset($_POST["login"])) {
         // cheking password
         $row = mysqli_fetch_assoc($result);
         if (password_verify($password, $row["password"])) {
-            header("Location: ../index.html");
+            // create new login session
+            $_SESSION["login"] = true;
+            header("Location: ../index.php");
             exit();
         }
     } else {

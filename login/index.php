@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (isset($_SESSION['login'])) {
+	header('Location: ../index.php');
+	exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +50,7 @@
            		    	<input type="password" class="input" name="password">
             	   </div>
             	</div>
-            	<a href="../index.html">Forgot Password?</a>
+            	<a href="#">Forgot Password?</a>
             	<input type="submit" class="btn" value="Login" name="login">
             </form>
         </div>
